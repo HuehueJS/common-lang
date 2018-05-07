@@ -5,6 +5,7 @@
 !.babelrc
 **.log
 **.lock
+**-lock.json
 /dist
 /node_modules
 /coverage

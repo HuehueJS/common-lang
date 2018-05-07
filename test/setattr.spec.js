@@ -22,6 +22,11 @@ describe("#setattr", function () {
         const test = () => setattr(obj, ['key_1','key_2'], 'value')
         expect(test).to.throw()
     })
+    it('when obj isn\'t an object should throw an error', function () {
+        let obj = 'not an object';
+        const test = () => setattr(obj, ['key_1','key_2'], 'value')
+        expect(test).to.throw()
+    })
     it('when key is an array and exists partially should put the value with force', function () {
         let obj = {'key_1':null}
         setattr(obj, ['key_1','key_2'], 'value',true)
