@@ -14,23 +14,33 @@ describe("#setattr", function () {
     })
     it('when key is an array and doesn\'t exists should put the value recursively', function () {
         let obj = {};
-        setattr(obj, ['key_1','key_2'], 'value')
+        setattr(obj, ['key_1', 'key_2'], 'value')
         expect(obj.key_1.key_2).to.equal('value')
     })
     it('when key is an array and exists partially should throw an error', function () {
-        let obj = {'key_1':null}
-        const test = () => setattr(obj, ['key_1','key_2'], 'value')
+        let obj = { 'key_1': null }
+        const test = () => setattr(obj, ['key_1', 'key_2'], 'value')
         expect(test).to.throw()
     })
     it('when key is an array and exists partially should put the value with force', function () {
-        let obj = {'key_1':null}
-        setattr(obj, ['key_1','key_2'], 'value',true)
+        let obj = { 'key_1': null }
+        setattr(obj, ['key_1', 'key_2'], 'value', true)
         expect(obj.key_1.key_2).to.equal('value')
     })
     it('force can\'t replace empty object', function () {
         let empty = {}
-        let obj = {'key_1':empty}
-        setattr(obj, ['key_1','key_2'], 'value',true)
+        let obj = { 'key_1': empty }
+        setattr(obj, ['key_1', 'key_2'], 'value', true)
         expect(obj.key_1).to.equal(empty)
+    })
+    it('when object is null should throw an error', function () {
+        let obj = null;
+        const test = () => setattr(obj, 'any_key', 'value')
+        expect(test).to.throw()
+    })
+    it('when object is undefined should throw an error', function () {
+        let obj = undefined;
+        const test = () => setattr(obj, 'any_key', 'value')
+        expect(test).to.throw()
     })
 })
