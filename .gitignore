@@ -1,11 +1,10 @@
-*.*
+.*
 !.gitignore
 !.travis.yml
 !.coveralls.yml
 !.babelrc
 **.log
 **.lock
-**-lock.json
 /dist
 /node_modules
 /coverage
