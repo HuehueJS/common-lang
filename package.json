@@ -1,8 +1,12 @@
 {
   "name": "huehuejs-common-lang",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Exploring",
-  "main": "src/main.js",
+  "main": "dist/main.js",
+  "files": [
+    "main.js",
+    "string.js"
+  ],
   "repository": "https://github.com/HuehueJS/common-lang",
   "author": "HuehueJs",
   "license": "BSD",
@@ -10,7 +14,8 @@
   "standard": {
     "ignore": [
       "coverage/**",
-      "node_modules/**"
+      "node_modules/**",
+      "src/**"
     ]
   },
   "scripts": {
