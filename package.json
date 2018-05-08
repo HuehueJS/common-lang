@@ -1,6 +1,6 @@
 {
   "name": "huehuejs-common-lang",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Exploring",
   "main": "dist/index.js",
   "files": [
