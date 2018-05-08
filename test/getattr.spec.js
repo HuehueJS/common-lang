@@ -1,4 +1,4 @@
-import { getattr } from '../src/main';
+import { getattr } from '../src/index';
 import { expect } from 'chai';
 
 describe('#getattr', function () {

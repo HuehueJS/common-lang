@@ -1,11 +1,10 @@
 {
   "name": "huehuejs-common-lang",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Exploring",
-  "main": "dist/main.js",
+  "main": "dist/index.js",
   "files": [
-    "dist/main.js",
-    "dist/string.js"
+    "dist/**"
   ],
   "repository": "https://github.com/HuehueJS/common-lang",
   "author": "HuehueJs",
