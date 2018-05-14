@@ -44,5 +44,3 @@ export const setattr = function (obj, key, value = null, force = false) {
     }
     currentValue[key.slice(-1)[0]] = value;
 }
-
-export * from './string/index'
