@@ -1,10 +1,10 @@
 {
   "name": "huehuejs-common-lang",
-  "version": "0.0.4",
+  "version": "0.0.16",
   "description": "Exploring",
   "main": "index.js",
   "files": [
-    "dist/**"
+    "**/*.js"
   ],
   "repository": "https://github.com/HuehueJS/common-lang",
   "author": "HuehueJs",
@@ -20,8 +20,9 @@
   "scripts": {
     "build": "babel ./src -d ./dist",
     "build-dev": "babel ./src -d ./dist --source-maps inline",
-    "prepublish": "cp ./package.json ./dist/ && cd ./dist",
-    "postpublish": "cd .."
+    "predeploy": "rm -rf dist && mkdir -p dist && npm run build && cp ./package.json ./dist/",
+    "deploy" : "cd ./dist && npm publish",
+    "postdeploy": "cd ..",
     "test": "nyc --reporter=html --reporter=text mocha --recursive --compilers js:babel-core/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
