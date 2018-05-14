@@ -1,4 +1,4 @@
-import { getattr, isEmpty } from './main'
+import { getattr, isEmpty } from '../index'
 export const upperCaseFirst = function (string) {
     return string[0].toUpperCase() + string.slice(1);
 }

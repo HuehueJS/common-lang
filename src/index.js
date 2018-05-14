@@ -1,5 +1,9 @@
+export const isNullOrUndefined = obj => [null, undefined].indexOf(obj) !== -1
+
+export const noop = x => x
+
 export const getattr = function (obj, key, defaultValue = undefined) {
-    if (obj === undefined || obj === null) {
+    if (isNullOrUndefined(obj)) {
         return defaultValue;
     }
     if (typeof obj !== 'object') {
@@ -19,8 +23,8 @@ export const getattr = function (obj, key, defaultValue = undefined) {
 }
 
 export const setattr = function (obj, key, value = null, force = false) {
-    if (obj === undefined || obj === null) {
-        return defaultValue;
+    if (isNullOrUndefined(obj)) {
+        throw TypeError();
     }
     if (typeof obj !== 'object') {
         throw TypeError();
@@ -45,7 +49,3 @@ export const isEmpty = function (obj) {
     if (!obj) { return true; }
     return !Object.keys(obj).length;
 }
-
-export const isNullOrUndefined = obj => [null, undefined].indexOf(obj) !== -1
-
-export const noop = x => x

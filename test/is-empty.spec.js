@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { isEmpty } from '../src/main';
+import { isEmpty } from '../src/index';
 
 describe("#isEmpty", function() {
     it('when array is empty return true', function(){

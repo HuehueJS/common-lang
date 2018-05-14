@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { format } from '../src/string';
+import { format } from '../src/string/index';
 
 describe("#formatstr", function() {
     it("return Hello with first name", function() {
