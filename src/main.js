@@ -41,28 +41,6 @@ export const setattr = function (obj, key, value = null, force = false) {
     currentValue[key.slice(-1)[0]] = value;
 }
 
-export const formatstr = function (message, data) {
-    if (isEmpty(data)) {
-        return message;
-    }
-
-    let formatedMessage = message;
-    let paramRegex = new RegExp("{([\\w\.\\(\\),]+)}", 'g');
-    let result = null;
-    while (true) {
-        result = paramRegex.exec(message);
-        if (!result) {
-            break;
-        }
-        let value = getattr(data, result[1].split('.'));
-        if (value === undefined) {
-            continue;
-        }
-        formatedMessage = formatedMessage.replace(result[0], value);
-    }
-    return formatedMessage;
-}
-
 export const isEmpty = function (obj) {
     if (!obj) { return true; }
     return !Object.keys(obj).length;
