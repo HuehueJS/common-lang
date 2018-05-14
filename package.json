@@ -2,7 +2,7 @@
   "name": "huehuejs-common-lang",
   "version": "0.0.4",
   "description": "Exploring",
-  "main": "dist/index.js",
+  "main": "index.js",
   "files": [
     "dist/**"
   ],
@@ -20,6 +20,8 @@
   "scripts": {
     "build": "babel ./src -d ./dist",
     "build-dev": "babel ./src -d ./dist --source-maps inline",
+    "prepublish": "cp ./package.json ./dist/ && cd ./dist",
+    "postpublish": "cd .."
     "test": "nyc --reporter=html --reporter=text mocha --recursive --compilers js:babel-core/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
