@@ -23,4 +23,7 @@ describe("#isEmpty", function() {
     it('when 0 return true', function(){
         expect(isEmpty(0)).to.equal(true);
     })
+    it('when 1 return false', function(){
+        expect(isEmpty(1)).to.equal(false);
+    })
 })

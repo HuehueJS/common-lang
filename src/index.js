@@ -1,6 +1,12 @@
-export const isNullOrUndefined = obj => [null, undefined].indexOf(obj) !== -1
+export const isNullOrUndefined = obj => [null, undefined].indexOf(obj) !== -1;
 
-export const noop = x => x
+export const isString = obj => typeof obj === 'string';
+
+export const isCallable = obj => obj instanceof Function;
+
+export const clone = obj => Object.assign({}, obj); 
+
+export const noop = x => x;
 
 export const getattr = function (obj, key, defaultValue = undefined) {
     if (isNullOrUndefined(obj)) {
@@ -46,6 +52,16 @@ export const setattr = function (obj, key, value = null, force = false) {
 }
 
 export const isEmpty = function (obj) {
-    if (!obj) { return true; }
-    return !Object.keys(obj).length;
+    if (isNullOrUndefined(obj)) { return true; }
+    if(typeof obj === 'number') {
+        if (obj === 0) { return true; }
+        return false
+    }
+    if (Object.keys(obj).length === 0) { return true; }
+    return false;
+}
+
+export const firstNonEmpty = function (obj) {
+    if (!obj) return null;
+    return obj.find(it => !isEmpty(it));
 }
