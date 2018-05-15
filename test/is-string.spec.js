@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { isString } from '../src/index';
+import { isString } from '../src/string/index';
 
 describe("#isString", function() {
     it('when number return false', function(){

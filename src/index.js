@@ -1,7 +1,5 @@
 export const isNullOrUndefined = obj => [null, undefined].indexOf(obj) !== -1;
 
-export const isString = obj => typeof obj === 'string';
-
 export const isCallable = obj => obj instanceof Function;
 
 export const clone = obj => Object.assign({}, obj); 
