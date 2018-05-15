@@ -2,7 +2,7 @@ export const isNullOrUndefined = obj => [null, undefined].indexOf(obj) !== -1;
 
 export const isCallable = obj => obj instanceof Function;
 
-export const clone = obj => Object.assign({}, obj); 
+export const clone = obj => JSON.parse(JSON.stringify(obj)); 
 
 export const noop = x => x;
 
