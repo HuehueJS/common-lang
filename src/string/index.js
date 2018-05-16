@@ -1,4 +1,7 @@
 import { getattr, isEmpty } from '../index'
+
+export const isString = obj => typeof obj === 'string';
+
 export const upperCaseFirst = function (string) {
     return string[0].toUpperCase() + string.slice(1);
 }
