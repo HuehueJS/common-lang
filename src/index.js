@@ -1,8 +1,14 @@
 export const isNullOrUndefined = obj => [null, undefined].indexOf(obj) !== -1;
 
+export const requireNotNull = function(obj, message) {
+    if(isNullOrUndefined(obj)) {
+        throw Error(message);
+    }
+}
+
 export const isCallable = obj => obj instanceof Function;
 
-export const clone = obj => JSON.parse(JSON.stringify(obj)); 
+export const clone = obj => JSON.parse(JSON.stringify(obj));
 
 export const noop = x => x;
 
