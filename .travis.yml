@@ -1,12 +1,10 @@
 language: node_js
 node_js:
-  - 7
-  - 6
-script: yarn test
-after_success: yarn coverage
+  - 8
+script: npm test
+after_success: npm run coverage
 install:
-  - yarn
+  - npm install
 cache:
-  yarn: true
   directories:
     - node_modules

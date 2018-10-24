@@ -13,7 +13,7 @@ describe("#setattr", function () {
         expect(obj.key).to.equal('value')
     })
     it('when key is an array and doesn\'t exists should put the value recursively', function () {
-        let obj = {};
+        const obj : any = {};
         setattr(obj, ['key_1', 'key_2'], 'value')
         expect(obj.key_1.key_2).to.equal('value')
     })
