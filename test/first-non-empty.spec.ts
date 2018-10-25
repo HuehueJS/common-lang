@@ -2,6 +2,27 @@ import { expect } from 'chai';
 import { firstNonEmpty } from '../src/index';
 
 describe('#firstNonEmpty', () => {
+    it("pass a empty [], should return the same empty []", () =>{
+        const empty = [];
+        expect(firstNonEmpty(empty)).to.equal(empty);
+    })
+    it("pass a empty null, should return the same empty null", ()=>{
+        const empty = null;
+        expect(firstNonEmpty(empty)).to.equal(empty);
+    })
+
+    it("pass a empty undefined, should return the same empty undefined", ()=>{
+        const empty = undefined;
+        expect(firstNonEmpty(empty)).to.equal(empty);
+    })
+    it("pass a empty 0, should return the same empty 0", ()=>{
+        const empty = 0;
+        expect(firstNonEmpty(empty)).to.equal(empty);
+    })
+    it("pass a empty {}, should return the same empty {}", ()=>{
+        const empty = {};
+        expect(firstNonEmpty(empty)).to.deep.equal(empty);
+    })
     it("pass [1,2,null], should return 1", () => {
         expect(firstNonEmpty([1,2,null])).to.equal(1);
     })

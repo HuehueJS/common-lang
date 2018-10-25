@@ -1,28 +1,27 @@
 import { getattr, isEmpty } from '../index'
 
-export const isString = obj => typeof obj === 'string';
+export const isString = (obj : any) => typeof obj === 'string';
 
-export const upperCaseFirst = function (string) {
+export const upperCaseFirst = (string : string) => {
     return string[0].toUpperCase() + string.slice(1);
 }
 
-export const lowerCaseFirst = function (string) {
+export const lowerCaseFirst = (string : string) => {
     return string[0].toLowerCase() + string.slice(1);
 }
 
-export const upperCase = function (string) {
+export const upperCase = (string : string) => {
     return string.toUpperCase();
 }
 
-export const lowerCase = function (string) {
+export const lowerCase = (string : string ) => {
     return string.toLowerCase();
 }
 
-export const format = function (message, data) {
+export const format = (message : string, data : any) => {
     if (isEmpty(data)) {
         return message;
     }
-
     let formatedMessage = message;
     let paramRegex = new RegExp("{([\\w\.\\(\\),]+)}", 'g');
     let result = null;
