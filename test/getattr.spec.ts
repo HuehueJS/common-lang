@@ -34,6 +34,10 @@ describe('#getattr', function () {
         let obj = { 'key': 1 }
         expect(getattr(obj, 'wrong_key', 'default')).to.equal('default')
     })
+    it('when key is an array and doesn\'t exists should return the default value', function () {
+        let obj = { 'key': 1 }
+        expect(getattr(obj, ['wrong_key','another_key'], 'default')).to.equal('default')
+    })
     it('when obj is null should return the default value', function () {
         let obj = null;
         expect(getattr(obj, 'key', 'default')).to.equal('default')
