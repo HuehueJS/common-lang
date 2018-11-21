@@ -1,6 +1,6 @@
 export const isNullOrUndefined = (obj: any) => [null, undefined].indexOf(obj) !== -1;
 
-export const requireNotNull = function (obj: any, message: string) {
+export const requireNotNull = (obj: any, message: string) => {
     if (isNullOrUndefined(obj)) {
         throw Error(message);
     }
