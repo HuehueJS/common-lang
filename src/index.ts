@@ -28,7 +28,7 @@ export const getattr = (obj: any, key: Key | KeyPiece, defaultValue: any = undef
     let currentValue = obj;
     for (let k of (key as Key)) {
         currentValue = currentValue[k];
-        if (currentValue === undefined) {
+        if (isNullOrUndefined(currentValue)) {
             return defaultValue;
         }
     }
